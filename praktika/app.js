@@ -7,7 +7,7 @@ app.use(bodyParser.json());
 //app.use(express.json());
 
 const users = [
-    {id: 1, name: "Marius"},
+    {id: 1, name: "Darius"},
     {id: 2, name: "Jolanta"},
     {id: 3, name: "Merunas"}
 ]
@@ -16,10 +16,10 @@ const users = [
 app.post('/users/', (req, res) =>{
 	const user = {
 		id: users.length + 1,
-		name: req.body
+		name: req.body.name
 	};
 	users.push(user);
-    res.send(user); 
+    res.send(users); 
 }); 
 
 //get all users
