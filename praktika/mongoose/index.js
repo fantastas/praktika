@@ -79,6 +79,19 @@ router.route('/schedules').get((req, res) => {
   });
 });
 
+router.route('/remove').delete((req, res) => {
+  ScheduleModel.remove({
+    title: req.body.title,
+    description: req.body.description,
+  }, (err, result) => {
+    if (err) {
+      console.err(err);
+    } else {
+      res.json(result);
+    }
+  });
+});
+
 app.listen(port, () => {
   console.log(`Server is running on Port: ${port}`);
 });
