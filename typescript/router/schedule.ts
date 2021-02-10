@@ -1,6 +1,6 @@
 /* eslint-disable import/extensions */
 import express from 'express';
-import ScheduleModel from '../db/schema';
+import ScheduleModel from '../db/model';
 
 const router = express.Router();
 
