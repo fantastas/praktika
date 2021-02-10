@@ -14,7 +14,7 @@ const Schedule6 = new ScheduleModel({ title: 'Saturday', description: 'Go to the
 const Schedule7 = new ScheduleModel({ title: 'Sunday', description: 'Call family' });
 const schedules = [Schedule1, Schedule2, Schedule3, Schedule4, Schedule5, Schedule6, Schedule7];
 
-function insertdata(data:mongoose.Document<any>[]) {
+function insertdata(data:mongoose.Document<String>[]) {
   return ScheduleModel.insertMany(data);
 }
 
