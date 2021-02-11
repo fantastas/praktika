@@ -30,7 +30,7 @@ router.route('/insert').post((req) => {
 
 router.route('/delete').delete((req) => {
   ScheduleModel.find(req.body).deleteMany().then(() => {
-    console.log('Data inserted'); // Success
+    console.log('Data deleted'); // Success
   }).catch((error) => {
     console.log(error); // Failure
   });
