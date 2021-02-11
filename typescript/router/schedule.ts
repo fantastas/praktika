@@ -22,17 +22,17 @@ router.route('/schedules').get((req, res) => {
 
 router.route('/insert').post((req) => {
   ScheduleModel.insertMany(req.body).then(() => {
-    console.log('Data inserted'); // Success
+    console.log('Data inserted');
   }).catch((error) => {
-    console.log(error); // Failure
+    console.log(error);
   });
 });
 
 router.route('/delete').delete((req) => {
-  ScheduleModel.find(req.body).deleteMany().then(() => {
-    console.log('Data deleted'); // Success
+  ScheduleModel.deleteMany(req.body).then(() => {
+    console.log('Data deleted');
   }).catch((error) => {
-    console.log(error); // Failure
+    console.log(error);
   });
 });
 
