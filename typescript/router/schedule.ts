@@ -20,16 +20,20 @@ router.route('/schedules').get((req, res) => {
   });
 });
 
-router.route('/insert').post((req, res) => {
-  ScheduleModel.insertMany(req.body);
-  res.send('Insert completed.');
-  router.route('/schedules');
+router.route('/insert').post((req) => {
+  ScheduleModel.insertMany(req.body).then(() => {
+    console.log('Data inserted'); // Success
+  }).catch((error) => {
+    console.log(error); // Failure
+  });
 });
 
-router.route('/delete').delete((req, res) => {
-  ScheduleModel.deleteMany(req.body).exec();
-  res.send('Data deleted');
-  router.route('/schedules');
+router.route('/delete').delete((req) => {
+  ScheduleModel.find(req.body).deleteMany().then(() => {
+    console.log('Data inserted'); // Success
+  }).catch((error) => {
+    console.log(error); // Failure
+  });
 });
 
 export default router;
